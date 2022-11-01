@@ -33,8 +33,9 @@ steps:
   displayName: Publish Artifact
   inputs:
     command: 'publish'
-    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     publishWebProjects: true
+    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    modifyOutputPath: false
 
 - task: PublishBuildArtifacts@1
   displayName: Publish Artifact in Pipeline
